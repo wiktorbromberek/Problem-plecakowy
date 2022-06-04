@@ -1,8 +1,14 @@
 import itertools
 
-c = 8
-w = [2, 1, 4, 4]
-p = [4, 3, 6, 8]
+w = []
+p = []
+f = open("C:/Users/DELL/Desktop/studia/2-semestr/algorytmy-i-struktury-danych/problem-plecakowy/dane.txt", "r")
+c = int(f.readline())
+n = int(f.readline())
+for i in range(n):
+    a = f.readline()
+    p.append(int(a[0]))
+    w.append(int(a[2]))
 
 
 def Bellman(c, w, p):
