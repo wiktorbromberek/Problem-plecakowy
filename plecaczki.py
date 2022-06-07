@@ -1,4 +1,5 @@
 import itertools
+import time
 
 w = []
 p = []
@@ -7,8 +8,9 @@ c = int(f.readline())
 n = int(f.readline())
 for i in range(n):
     a = f.readline()
-    p.append(int(a[0]))
-    w.append(int(a[2]))
+    x, y = a.split()
+    p.append(int(x))
+    w.append(int(y))
 
 
 def Bellman(c, w, p):
@@ -55,12 +57,18 @@ def brute_force(c, w, p):
     return maksimum, result
 
 
+start = time.time()
 a, b, mm = Bellman(c, w, p)
+stop = time.time()
+print(stop-start)
 print(a)
 print(b)
-for i in mm:
-    print(i)
+# for i in mm:
+#     print(i)
 
+start = time.time()
 c, d = brute_force(c, w, p)
+stop = time.time()
+print(stop-start)
 print(c)
 print(d)
